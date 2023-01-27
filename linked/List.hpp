@@ -57,13 +57,13 @@ T & List<T>::operator[](unsigned index) {
 
 template <typename T>
 typename List<T>::ListNode *& List<T>::_index(unsigned index) {
-  return _index_helper(index, head_);
+  return _index(index, head_);
 }
 
 template <typename T>
-typename List<T>::ListNode *& List<T>::_index_helper(unsigned index, ListNode *& node) {
+typename List<T>::ListNode *& List<T>::_index(unsigned index, ListNode *& node) {
   if (index == 0 || node == nullptr) { return node; }
-  else                               { return _index_helper(index - 1, node->next); }
+  else                               { return _index(index - 1, node->next); }
 }
 
 

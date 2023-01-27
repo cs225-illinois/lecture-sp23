@@ -31,7 +31,7 @@ class List {
     ListNode *_find(const T & data);
     void _printReverse(ListNode *node) const;
     ListNode *& _index(unsigned index);
-    ListNode *& _index_helper(unsigned index, ListNode *& node);
+    ListNode *& _index(unsigned index, ListNode *& node);
 };
 
 #include "List.hpp"
