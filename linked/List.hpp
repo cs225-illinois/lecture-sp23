@@ -61,9 +61,14 @@ typename List<T>::ListNode *& List<T>::_index(unsigned index) {
 }
 
 template <typename T>
-typename List<T>::ListNode *& List<T>::_index(unsigned index, ListNode *& node) {
-  if (index == 0 || node == nullptr) { return node; }
-  else                               { return _index(index - 1, node->next); }
+typename List<T>::ListNode *& List<T>::_index(unsigned index, ListNode *& node)
+{
+  if (index == 0 || node == nullptr) 
+  {
+    return node;
+  } else {
+    return _index(index - 1, node->next);
+  }
 }
 
 
@@ -104,7 +109,14 @@ void List<T>::insert(const T & data, unsigned index) {
 template <typename T>
 T List<T>::remove(unsigned index) {
   ListNode *& node = _index(index);
-  
+  return _remove(node);
+}
+
+/**
+ * remove
+ */
+template <typename T>
+T List<T>::_remove(ListNode *& node) {
   ListNode * temp = node;
   node = node->next;
   
@@ -113,4 +125,3 @@ T List<T>::remove(unsigned index) {
 
   return data;
 }
-

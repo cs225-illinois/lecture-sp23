@@ -32,6 +32,7 @@ class List {
     void _printReverse(ListNode *node) const;
     ListNode *& _index(unsigned index);
     ListNode *& _index(unsigned index, ListNode *& node);
+    T _remove(ListNode *&node);
 };
 
 #include "List.hpp"
