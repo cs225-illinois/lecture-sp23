@@ -19,9 +19,9 @@ public:
 int main() {
   std::vector<int> numbers = {1, 102, 105, 4, 5, 27, 41, -7, 999};
 
-  auto isnegl = [](int num) { return (num < 0); };
-  auto isnegfp = isNegative;
-  auto isnegfuctor = IsNegative();
+  auto isnegl = [](int num) { return (num < 0); }; // lambda
+  auto isnegfp = isNegative;    // function pointer
+  auto isnegfuctor = IsNegative();    // functor
 
   std::cout << "There are " << Countif(numbers.begin(), numbers.end(), isnegl) 
     << " negative numbers" << std::endl;
